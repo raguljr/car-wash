@@ -1,0 +1,2 @@
+class Washer < ApplicationRecord
+end
