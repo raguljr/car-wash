@@ -12,6 +12,7 @@
 //
 //= require rails-ujs
 //= require jquery.min
+//= require jquery-ui
 //= require popper.min
 //= require bootstrap.min
 //= require activestorage

@@ -25,6 +25,20 @@ xlsx.each_row_streaming(offset: 1, pad_cells: true) do |row|
     short_address: validate(row[1]),
     phone_number: validate(row[2]),
     website: validate(row[3]),
+    primary_type: validate(row[13]),
+    secondary_type: validate(row[27])  
+  )
+  address = Address.create(
+    city: validate(row[16]),
+    state: validate(row[17]),
+    state_code: validate(row[18]),
+    zip: validate(row[19]),
+    google_maps_url: validate(row[12]),
+    lat: validate(row[14]),
+    lon: validate(row[15]),
+    washer_id: washer.id
+  )
+  feature = Feature.create(
     automatic: validate(row[4]),
     handwash: validate(row[5]),
     touchless: validate(row[6]),
@@ -33,14 +47,9 @@ xlsx.each_row_streaming(offset: 1, pad_cells: true) do |row|
     oil_change: validate(row[9]),
     shampoo: validate(row[10]),
     free_vacuum: validate(row[11]),
-    google_maps_url: validate(row[12]),
-    primary_type: validate(row[13]),
-    lat: validate(row[14]),
-    lon: validate(row[15]),
-    city: validate(row[16]),
-    state: validate(row[17]),
-    state_code: validate(row[18]),
-    zip: validate(row[19]),
+    washer_id: washer.id
+  )
+  workingday = WorkingDay.create(
     sunday: validate(row[20]),
     monday: validate(row[21]),
     tuesday: validate(row[22]),
@@ -48,6 +57,6 @@ xlsx.each_row_streaming(offset: 1, pad_cells: true) do |row|
     thursday: validate(row[24]),
     friday: validate(row[25]),
     saturday: validate(row[26]),
-    secondary_type: validate(row[27])
+    washer_id: washer.id
   )
 end

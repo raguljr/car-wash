@@ -10,15 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_19_061615) do
+ActiveRecord::Schema.define(version: 2019_04_19_145533) do
 
-  create_table "washers", force: :cascade do |t|
-    t.string "name"
-    t.string "phone_number"
-    t.string "website"
-    t.string "primary_type"
-    t.string "secondary_type"
-    t.string "short_address"
+  create_table "addresses", force: :cascade do |t|
     t.string "city"
     t.string "state"
     t.string "state_code"
@@ -26,6 +20,12 @@ ActiveRecord::Schema.define(version: 2019_04_19_061615) do
     t.string "google_maps_url"
     t.string "lat"
     t.string "lon"
+    t.integer "washer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "features", force: :cascade do |t|
     t.boolean "automatic"
     t.boolean "handwash"
     t.boolean "touchless"
@@ -34,6 +34,23 @@ ActiveRecord::Schema.define(version: 2019_04_19_061615) do
     t.boolean "oil_change"
     t.boolean "shampoo"
     t.boolean "free_vacuum"
+    t.integer "washer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "washers", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_number"
+    t.string "website"
+    t.string "primary_type"
+    t.string "secondary_type"
+    t.string "short_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "working_days", force: :cascade do |t|
     t.string "sunday"
     t.string "monday"
     t.string "tuesday"
@@ -41,6 +58,7 @@ ActiveRecord::Schema.define(version: 2019_04_19_061615) do
     t.string "thursday"
     t.string "friday"
     t.string "saturday"
+    t.integer "washer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
