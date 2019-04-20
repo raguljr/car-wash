@@ -12,6 +12,10 @@ $(document).ready(function() {
   	('navbar-collapsed').addClass('solid');
   });
 
+
+
+});
+
   document.addEventListener("turbolinks:load", function() {
   $( "#city" ).autocomplete({
     source: function( request, response ) {
@@ -43,9 +47,6 @@ $(document).ready(function() {
     var where = $('#city').val();
     var what = $('#what').val();
     var link = "list?what="+what+"&where="+where;
-    debugger
     location.href = link;
   });
-});
-
 });
