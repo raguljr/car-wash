@@ -51,20 +51,20 @@
                   <button type="submit" class="btn btn-xs btn-success locate-button d-none d-sm-block"><i class="fas fa-map-marker-alt mr-1"></i> Locate Me</button>
               </div>
             </div>
-              <div class="form-row">
+              <form class="form-row" action="/list">
                 <div class="form-group col-md-6">
                   <label for="what" class="what">What</label>
-                  <input type="text" class="form-control search" id="what" placeholder="Ex.Day Spa, Hair Cutting, Nail Salons, etc">
+                  <input type="text" class="form-control search" name="what" id="what" placeholder="Ex.Day Spa, Hair Cutting, Nail Salons, etc">
                 </div>
                 <div class="form-group col-md-4 ">
                   <label for="where" class="where">Where</label>
-                  <input type="text" class="form-control search" id="city" placeholder="Los Angeles, Kansas, etc">
+                  <input type="text" class="form-control search" name="city" id="city" placeholder="Los Angeles, Kansas, etc">
                 </div>
                 <div class="col-md-2">
                   <button type="submit" id="search-list" class="btn btn-lg btn-success  search-button"><i class="fas fa-search"></i> Search</button>
                   <button type="submit" class="btn btn-xs btn-outline-success locate-button-mobile d-md-none d-sm-block"><i class="fas fa-map-marker-alt mr-1"></i> locate</button>
                 </div>
-              </div>
+              </form>
         </div>
       
 

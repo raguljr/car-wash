@@ -29,7 +29,7 @@ class Searcher
       end
     else
       @count = 0
-      @results = Kaminari.paginate_array([]).page(params[:page]).per(10)
+      @results = Kaminari.paginate_array([]).page(0).per(10)
     end
     [@results, @count]
   end

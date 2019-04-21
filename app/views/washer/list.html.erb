@@ -139,7 +139,7 @@
                 </div>
             </div>
 
-                 <form class="p-3 search-form">
+                 <form action="/list" class="p-3 search-form">
                    <div class="form-row">
                       <div class="form-group col-md-12">
                         <p class="search-title">Search</p>
@@ -147,7 +147,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text small-text search-what" id="inputGroupPrepend">What</span>
                               </div>
-                              <input type="text" class="form-control searchbox-what" id="what" placeholder="Any Keywords..." aria-describedby="inputGroupPrepend" required>
+                              <input type="text" class="form-control searchbox-what" name="what" id="what" placeholder="Any Keywords..." aria-describedby="inputGroupPrepend" >
                             </div>
                       </div>
                     </div>
@@ -158,7 +158,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text small-text search-where" id="inputGroupPrepend">Where</span>
                               </div>
-                              <input type="text" class="form-control searchbox-where" id="city" placeholder="City, postcode...." aria-describedby="inputGroupPrepend" required>
+                              <input type="text" class="form-control searchbox-where" name="city" id="city" placeholder="City, postcode...." aria-describedby="inputGroupPrepend" >
                             </div>
                       </div>
                     </div>
