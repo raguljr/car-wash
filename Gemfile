@@ -8,8 +8,8 @@ gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'sqlite3', group: :development
-gem 'pg', '0.18.1', group: :production
-gem 'rails_12factor', group: :production
+# gem 'pg', '0.18.1', group: :production
+gem 'mysql2', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -41,6 +41,8 @@ gem 'kaminari'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem "bcrypt_pbkdf", ">= 1.0", "< 2.0"
+gem 'ed25519'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,6 +51,12 @@ group :development, :test do
 end
 
 group :development do
+
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rvm'
+
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
