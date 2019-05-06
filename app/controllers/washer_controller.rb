@@ -3,7 +3,7 @@ class WasherController < ApplicationController
   end
 
   def list
-    @results, @count = Searcher.washer(params[:what], params[:where], params[:page])
+    @results, @count = Searcher.washer(params[:what], params[:city], params[:page])
   end
 
   def where_autocomplete
