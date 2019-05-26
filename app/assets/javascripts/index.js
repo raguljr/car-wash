@@ -12,6 +12,12 @@ $(document).ready(function() {
   	('navbar-collapsed').addClass('solid');
   });
 
+  $('.select-category').change(function(){
+    var url = window.location.href.replace(/(what=)[^\&]+/, '$1' + $(this).val());
+    console.log(url);
+    window.location.href = url;
+  });
+
 });
 
 document.addEventListener("turbolinks:load", function() {
@@ -40,5 +46,6 @@ document.addEventListener("turbolinks:load", function() {
         }
       });
     }});
+
 
 });
