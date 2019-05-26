@@ -13,7 +13,12 @@ $(document).ready(function() {
   });
 
   $('.select-category').change(function(){
-    var url = window.location.href.replace(/(what=)[^\&]+/, '$1' + $(this).val());
+    if(window.location.href.match(/(what=)[^\&]+/) == undefined) {
+      var url = window.location.href.replace("what=","what="+ $(this).val())
+    }
+    else{
+      var url = window.location.href.replace(/(what=)[^\&]+/, '$1' + $(this).val());
+    }
     console.log(url);
     window.location.href = url;
   });
