@@ -6,6 +6,10 @@ class WasherController < ApplicationController
     @results, @count = Searcher.washer(params[:what], params[:city], params[:page])
   end
 
+  def info
+    @info = Washer.includes(:address,:feature,:working_day).find(params[:id])
+  end
+
   def where_autocomplete
     query = params[:term].downcase
     city = Address.where("lower(city) like ?", "#{query}%").or(Address.where("zip like ?", "#{query}%")).limit(10).pluck(:city, :state_code)

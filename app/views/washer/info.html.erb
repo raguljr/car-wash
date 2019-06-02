@@ -1,0 +1,864 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+   <div class="container">
+    <img src="/assets/logo.png" alt="logo">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="   navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          EXPLORE <i class="fas fa-chevron-down"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">BLOG</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link login" href="#"><i class="far fa-user-circle"></i>&nbsp;LOGIN/SIGNUP</a>
+        </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 form-row-mobile">
+      <button class="btn btn-outline-success mr-sm-2 my-2 my-sm-0 contactus" type="submit">CONTACT US</button>
+      <button class="btn btn-success my-2 my-sm-0 addlisting" type="submit">ADD LISTING</button>
+    </form>
+  </div>
+   </div>
+</nav>
+<!-- navigation ends-->
+
+
+<!-- jumobtron -->
+
+<div class="image-setting">
+</div>
+
+<!-- jumbotron -->
+
+<!-- picture button -->
+<div class="container all-pictures-setting">
+  <div class="row">
+      <div class="col-md-2 all-pictures">
+          <button class="btn btn-sm btn-light" type="button"><i class="fas fa-images"></i> view all pictures</button>
+      </div>
+  </div>
+</div>
+<!-- picture button -->
+
+
+
+
+<!-- shopdetails -->
+<div class="shop-details">
+    
+<div class="container review px-5 py-3">
+    <div class="row">
+        <div class="col-9 col-md-9">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Search Listing</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Day Spas</li>
+              </ol>
+            </nav>
+        </div>
+        <div class="col-3 col-md-3 featured-mobile  d-sm-block d-md-none d-lg-none">
+          <button type="button" class="btn btn-success btn-sm btn-block">Featured</button>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div >
+          <p class="col-4 col-sm-6 col-md-3 offset-7 offset-sm-5 offset-md-7 verified"><i class="fas fa-check-circle"></i> Verified</p>
+          <p class="col-8 col-sm-6 col-md-9 shop-title"><%= @info.name %></p>
+        </div>
+        <p class="my-2">
+          <span class="rating-number small-text mr-1 mr-sm-0">4.0</span>
+          <i class="fas fa-star mr-1 mr-sm-0"></i>
+          <i class="fas fa-star mr-1 mr-sm-0"></i>
+          <i class="fas fa-star mr-1 mr-sm-0"></i>
+          <i class="fas fa-star mr-1 mr-sm-0"></i>
+          <i class="fas fa-star mr-1 mr-sm-0"></i>
+          <span class="rating-count small-text mr-2">(678 Rating)</span> 
+          <i class="far fa-clock mr-2 mt-2">&nbsp;
+          <span class="rating-count small-text mr-2 mt-1"> Posted 20 hours ago</span></i>
+          <button type="button" class="btn btn-light btn-sm btn-block button-light  d-sm-block d-md-none d-lg-none mt-2"> <u>Suggest an edit</u></button>
+        </p>
+      </div>
+      <div  class="col-md-6 col-sm-12 col-xs-12 text-right mob-center ">
+        <button type="button" class="btn btn-outline-danger btn-sm  report-button"><i class="fas fa-exclamation-triangle"></i> Report</button>
+        <button type="button" class="btn btn-primary btn-sm share-button" ><i class="fas fa-share-alt"></i> Share</button>
+        <button type="button" class="btn btn-success btn-sm claim-button">Claim Business</button>
+      </div>
+    </div>
+    
+    <div class="row  d-none d-sm-none d-md-block ">
+      <div class="col-6 col-sm-6 col-md-4 featured-button-col featured-buttons">
+        <button type="button" class="btn btn-success btn-sm btn-block featured">Featured</button>
+        <button type="button" class="btn btn-light btn-sm btn-block button-light"> <u>Suggest an edit</u></button>
+      </div>
+      
+    </div>
+    <hr class="my-5  d-none d-sm-none d-md-block" />
+
+     <div class="row d-md-block d-lg-none tab-spacing mobile-tab-view"><!-- mobile tab view -->
+            <div class="col-12">
+                <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Store info</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Store Hours</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Description</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                          <!--address card -->
+                            <div class="card mb-4 shadow-sm card-address">
+                             <img src="/assets/women.jpg" alt="magnify" class="img-fluid">
+                              <div class="card-body">
+                                <div class="row">
+                                <div class="col-md-12"><p class="shop-number"><i class="fas fa-phone-volume address-icons mr-3"></i> <%= @info.phone_number %> </p></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-md-12"><p><a href="<%= @info.website %>" class="visit-website"><i class="fas fa-link address-icons mr-3"></i> visit website</a></p></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-md-12"><p class="shop-address"><i class="fas fa-map-marker-alt address-icons mr-3"></i> <%= @info.short_address %> </p></div>
+                                </div>
+                              </div>
+                            </div>
+                            <!--address card -->
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                          <div class="card card-store mb-4 shadow-sm">           
+                            <div class="card-body store-hours">
+                              <div class="row">
+                              <div class="col-3 "><p>Today </p></div>
+                              <div class="col-4 offset-5  "><p class="open text-center">open</p></div>
+                              </div>
+                              <div class="row">
+                              <div class="col-3"><p class="text-muted">Mon</p></div>
+                              <div class="col-9"><p class="text-right"><%= @info.working_day.monday %></p></div>
+                              </div>
+                              <div class="row">
+                              <div class="col-3"><p class="text-muted">Tue</p></div>
+                              <div class="col-9"><p class="text-right"><%= @info.working_day.tuesday %></p></div>
+                              </div>
+                              <div class="row">
+                              <div class="col-3"><p class="text-muted">Wed</p></div>
+                              <div class="col-9"><p class="text-right"><%= @info.working_day.wednesday %></p></div>
+                              </div>
+                              <div class="row">
+                              <div class="col-3"><p class="text-muted">Thu</p></div>
+                              <div class="col-9"><p class="text-right"><%= @info.working_day.thursday %></p></div>
+                              </div>
+                              <div class="row">
+                              <div class="col-3"><p class="text-muted">Fri</p></div>
+                              <div class="col-9"><p class="text-right"><%= @info.working_day.friday %></p></div>
+                              </div>
+                              <div class="row">
+                              <div class="col-3"><p class="text-muted">Sat</p></div>
+                              <div class="col-9"><p class="text-right"><%= @info.working_day.saturday %></p></div>
+                              </div>
+                              <div class="row">
+                              <div class="col-3"><p class="text-muted">Sun</p></div>
+                              <div class="col-9"><p class="text-right"><%= @info.working_day.sunday %></p></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                          <div class="col-md-12 description">
+                              <p class="description-details">Being the savage's bowsman, that is, the person who pulled the bow-oar in his boat (the second one from forward), it was my cheerful duty to attend upon him while taking that hard-scrabble scramble upon the dead whale's back. You have seen Italian organ-boys holding a dancing-ape by a long cord. Just so, from the ship's steep side, did I hold Queequeg down there in the sea, by what is technically called in the fishery a monkey-rope, attached to a strong strip of canvas belted round his waist.</p>
+                              <!-- Features -->
+          <div class="col-12 my-3 ">
+            <p class="features">Features</p>
+            <div class="row features-details">
+              <% if @info.feature.automatic %>
+              <div class="col-6 small-text">
+                <div class="row">
+                  <div class="col-1"><i class="fas fa-credit-card"></i></div>
+                  <div class="col-9 features-details-tag"><p>Automatic</p></div>
+                </div>
+              </div>
+              <% end %>
+              <% if @info.feature.handwash %>
+              <div class="col-6 small-text">
+                <div class="row">
+                  <div class="col-1"><i class="fas fa-credit-card"></i></div>
+                  <div class="col-9 features-details-tag"><p>Handwash</p></div>
+                </div>
+              </div>
+              <% end %>
+              <% if @info.feature.touchless %>
+              <div class="col-6 small-text">
+                <div class="row">
+                  <div class="col-1"><i class="fas fa-credit-card"></i></div>
+                  <div class="col-9 features-details-tag"><p>Touchless</p></div>
+                </div>
+              </div>
+              <% end %>
+              <% if @info.feature.spray %>
+              <div class="col-6 small-text">
+                <div class="row">
+                  <div class="col-1"><i class="fas fa-credit-card"></i></div>
+                  <div class="col-9 features-details-tag"><p>Spray</p></div>
+                </div>
+              </div>
+              <% end %>
+              <% if @info.feature.interior %>
+              <div class="col-6 small-text">
+                <div class="row">
+                  <div class="col-1"><i class="fas fa-credit-card"></i></div>
+                  <div class="col-9 features-details-tag"><p>Interior</p></div>
+                </div>
+              </div>
+              <% end %>
+              <% if @info.feature.oil_change %>
+              <div class="col-6 small-text">
+                <div class="row">
+                  <div class="col-1"><i class="fas fa-credit-card"></i></div>
+                  <div class="col-9 features-details-tag"><p>Oil Change</p></div>
+                </div>
+              </div>
+              <% end %>
+              <% if @info.feature.shampoo %>
+              <div class="col-6 small-text">
+                <div class="row">
+                  <div class="col-1"><i class="fas fa-credit-card"></i></div>
+                  <div class="col-9 features-details-tag"><p>Shampoo</p></div>
+                </div>
+              </div>
+              <% end %>
+              <% if @info.feature.free_vacuum %>
+              <div class="col-6 small-text">
+                <div class="row">
+                  <div class="col-1"><i class="fas fa-credit-card"></i></div>
+                  <div class="col-9 features-details-tag"><p>Free Vacuum</p></div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+          <!-- featrures -->
+                              </div>
+
+                        </div>
+                      </div>
+            </div>
+          </div><!-- mobile tab view -->
+
+
+    <div class="row ">
+        <div class="col-md-3 remove-padding d-none d-sm-block tablet-view-custom">
+
+          <div class="col-md-12 remove-padding">
+            <!--address card -->
+          <div class="card mb-4 shadow-sm card-address">
+           <img src="/assets/women.jpg" alt="magnify" class="img-fluid">
+            <div class="card-body">
+              <div class="row">
+              <div class="col-md-1"><i class="fas fa-phone-volume address-icons "></i></div>
+              <div class="col-md-10"><p class="shop-number"> <%= @info.phone_number %> </p></div>
+              </div>
+              <div class="row">
+              <div class="col-md-1"><i class="fas fa-link address-icons "></i> </div>
+              <div class="col-md-10"><p><a href="<%= @info.website %>" class="visit-website">visit website</a></p></div>
+              </div>
+              <div class="row">
+              <div class="col-md-1"><i class="fas fa-map-marker-alt address-icons "></i> </div>
+              <div class="col-md-10"><p class="shop-address"> <%= @info.short_address %> </p></div>
+              </div>
+            </div>
+          </div>
+          <!--address card -->
+          <!--hours card -->
+          <div class="card card-store mb-4 shadow-sm">
+            <div class="card-body store-hours">
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="store-hours-title"><i class="far fa-clock"></i> Store Hours:</p>
+                </div>
+              <div class="col-md-6"><p>Today </p></div>
+              <div class="col-md-4 offset-md-2"><p class="open text-center">open</p></div>
+              </div>
+              <div class="row">
+              <div class="col-md-3"><p class="text-muted">Mon</p></div>
+              <div class="col-md-9"><p class="text-right"><%= @info.working_day.monday %></p></div>
+              </div>
+              <div class="row">
+              <div class="col-md-3"><p class="text-muted">Tue</p></div>
+              <div class="col-md-9"><p class="text-right"><%= @info.working_day.tuesday %></p></div>
+              </div>
+              <div class="row">
+              <div class="col-md-3"><p class="text-muted">Wed</p></div>
+              <div class="col-md-9"><p class="text-right"><%= @info.working_day.wednesday %></p></div>
+              </div>
+              <div class="row">
+              <div class="col-md-3"><p class="text-muted">Thu</p></div>
+              <div class="col-md-9"><p class="text-right"><%= @info.working_day.thursday %></p></div>
+              </div>
+              <div class="row">
+              <div class="col-md-3"><p class="text-muted">Fri</p></div>
+              <div class="col-md-9"><p class="text-right"><%= @info.working_day.friday %></p></div>
+              </div>
+              <div class="row">
+              <div class="col-md-3"><p class="text-muted">Sat</p></div>
+              <div class="col-md-9"><p class="text-right"><%= @info.working_day.saturday %></p></div>
+              </div>
+              <div class="row">
+              <div class="col-md-3"><p class="text-muted">Sun</p></div>
+              <div class="col-md-9"><p class="text-right"><%= @info.working_day.sunday %></p></div>
+              </div>
+            </div>
+          </div>
+          <!--hours card -->
+          <!--listing card -->
+
+         
+            
+
+              <div class="card shadow-sm card-related d-none d-sm-block"><!--card -->
+                <div class="col-md-12 pt-3">
+                  <p class="related-listing">Related Listing</p>
+                </div>
+                   <div class="col-md-12">
+                     <div class="row">
+                            <div class="col-md-4 remove-padding-right padding-right">
+                              <img src="/assets/women.jpg" class="related-img img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                              <div class="card-block ">
+                                <p class="card-title">HairCuts Room</p>
+                                <p class="card-text"><span class="rating-number small-text">4.0</span> <span class="rating-count small-text">(678 Rating)</span></p>
+                                <hr class="card-hr" />
+                                <p class="card-text related-card-address"><i class="fas fa-map-marker-alt text-muted "></i> <span>800 San Pable Ave, Albany, CA</span></p>
+                              </div>
+                            </div>
+                   </div>
+                   </div>
+                   <div class="col-md-12">
+                     <hr />
+                   </div>
+                   <div class="col-md-12">
+                     <div class="row">
+                            <div class="col-md-4 remove-padding-right padding-right">
+                              <img src="/assets/women.jpg" class="related-img img-fluid">
+                            </div>
+                            <div class="col-md-8 "> 
+                              <div class="card-block ">
+                                <p class="card-title">HairCuts Room</p>
+                                <p class="card-text"><span class="rating-number small-text">4.0</span> <span class="rating-count small-text">(678 Rating)</span></p>
+                                <hr class="card-hr" />
+                                <p class="card-text related-card-address"><i class="fas fa-map-marker-alt text-muted "></i> <span>800 San Pable Ave, Albany, CA</span></p>
+                              </div>
+                            </div>
+                   </div>
+                   </div>
+                   
+
+                   
+              </div><!--card -->
+          
+          <!--listing card -->
+        </div>
+      </div>
+
+        <!-- right division -->
+        <div class="col-12 col-sm-12 col-md-8 offset-md-1 ">
+          <!-- Description -->
+          <div class="col-md-12 d-none d-sm-none d-md-block description-tab-custom">
+          <p class="description">Description</p>
+          <p class="description-details">Being the savage's bowsman, that is, the person who pulled the bow-oar in his boat (the second one from forward), it was my cheerful duty to attend upon him while taking that hard-scrabble scramble upon the dead whale's back. You have seen Italian organ-boys holding a dancing-ape by a long cord. Just so, from the ship's steep side, did I hold Queequeg down there in the sea, by what is technically called in the fishery a monkey-rope, attached to a strong strip of canvas belted round his waist.</p>
+          </div>
+          <!-- Description -->
+          <!-- Features -->
+          <div class="col-md-6 my-5 d-none d-sm-none d-md-block description-tab-custom">
+            <p class="features">Features</p>
+            <div class="row features-details">
+              <div class="col-md-6 small-text">
+                <% if @info.feature.automatic %>
+                <div class="row">
+                  <div class="col-md-1"><i class="fas fa-credit-card"></i></div>
+                  <div class="col-md-8 features-details-tag"><p>Automatic</p></div>
+                </div>
+                <% end %>
+                <% if @info.feature.handwash %>
+                <div class="row">
+                  <div class="col-md-1"><i class="fas fa-parking"></i></div>
+                  <div class="col-md-8 features-details-tag"><p>Hand Wash</p></div>
+                </div>
+                <% end %>
+                <% if @info.feature.touchless %>
+                <div class="row">
+                  <div class="col-md-1"><i class="fas fa-wifi"></i></div>
+                  <div class="col-md-8 features-details-tag"><p>Touchless</p></div>
+                </div>
+                <% end %>
+              <% if @info.feature.spray %>
+              <div class="row">
+                  <div class="col-md-1"><i class="fas fa-percentage"></i></div>
+                  <div class="col-md-8 features-details-tag"><p>Spray</p></div>
+              </div>
+              <% end %>
+              <% if @info.feature.interior %>
+              <div class="row">
+                  <div class="col-md-1"><i class="far fa-smile"></i></div>
+                  <div class="col-md-8 features-details-tag"><p>Interior</p></div>
+              </div>
+              <% end %>
+              <% if @info.feature.oil_change %>
+              <div class="row">
+                  <div class="col-md-1"><i class="far fa-smile"></i></div>
+                  <div class="col-md-8 features-details-tag"><p>Oil Change</p></div>
+              </div>
+              <% end %>
+              <% if @info.feature.shampoo %>
+              <div class="row">
+                  <div class="col-md-1"><i class="far fa-smile"></i></div>
+                  <div class="col-md-8 features-details-tag"><p>Shampoo</p></div>
+              </div>
+              <% end %> 
+              <% if @info.feature.free_vacuum %>
+              <div class="row">
+                  <div class="col-md-1"><i class="far fa-smile"></i></div>
+                  <div class="col-md-8 features-details-tag"><p>Free Vacuum</p></div>
+              </div>
+              <% end %>  
+            </div>
+            </div>
+          </div>
+          <!-- featrures -->
+
+          <div class="col-md-12 form-padding">
+            <p class="reviews">Reviews and Ratings:</p>
+            <!-- form -->
+            <form class="py-3 px-3">
+              <p class="my-2 reviews-rating">Rate Us and Write a Review</p>
+              <hr class="rating-hr" />
+              <div class="form-row ">
+                  <div class="form-group col-md-9 remove-mb">
+                    <p class="select-rating">Select your Rating <i class="fas fa-star rating-star"></i> <i class="fas fa-star rating-star"></i> <i class="fas fa-star rating-star"></i> <i class="fas fa-star rating-star"></i><i class="fas fa-star rating-star"></i></p>
+                  </div>
+                  <div class="form-group col-md-3  remove-mb">
+                    <div class="custom-file ">
+                    <input type="file" class="custom-file-input" id="customFile" >
+                    <label class="custom-file-label" for="customFile"><i class="fas fa-cloud-upload-alt"></i> Add a Photo</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row  ">
+                  <div class="form-group col-md-4">
+                    <input type="text" class="form-control" placeholder="Name">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input type="password" class="form-control" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" rows="5" placeholder="Write a Review here..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-success mb-4">Sign up and Submit</button>
+              </form>
+              <!-- form -->
+          </div>
+
+          <!-- review content section -->
+          <div class="col-md-12 py-5">
+            <div class="row">
+              <div class="col-3 col-md-2 col-sm-2">
+                <img src="/assets/anime.jpg" alt="profile images" class=" rounded-circle human-circle" class="img-fluid">
+            </div>
+            <div class="col-9 col-md-6 col-sm-6"> 
+                <p class="comment-title">Rejunvated like nothing else</p>
+                <p class="small-text author-comment">by <span class="text-orange">Anna Molly</span></p>
+            </div>
+            <div class="col-12 col-md-4 col-sm-4 ">
+              <p class="text-right text-left"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="rating-number small-text">4.0</span></p>
+              <p class="text-right text-left small-text comment-very-good">Very Good</p>
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md-9 offset-md-2">
+                  <p class="small-text review-message">Being the savage's bowsman, that is, the person who pulled the bow-oar in his boat (the second one from forward), it was my cheerful duty to attend upon him while taking that hard-scrabble scramble upon the dead whale's back. You have seen Italian organ-boys holding a dancing-ape by a long cord. Just so, from the ship's steep side, did I hold Queequeg down there in the sea, by what is technically called in the fishery a monkey-rope, attached to a strong strip of canvas belted round his waist.</p>
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-md-10 offset-md-2">
+                    <img src=" " alt="" class=" img-fluid col-md-3" />
+                    <img src=" " alt="" class=" img-fluid col-md-3" />
+                    <img src=" " alt="" class=" img-fluid col-md-3" />
+                    <p><i class="fas fa-heart text-orange"></i><span> 12</span></p>
+                </div>
+              </div>  
+          </div>
+          <!-- review content section -->
+          <!-- review content section -->
+          <div class="col-md-12 py-5">
+            <div class="row">
+              <div class="col-3 col-md-2 col-sm-2">
+              <img src="/assets/anime1.jpg" alt="profile images" class=" rounded-circle human-circle" class="img-fluid">
+            </div>
+            <div class="col-9 col-md-6 col-sm-6"> 
+                <p class="comment-title">Rejunvated like nothing else</p>
+                <p class="small-text author-comment">by <span class="text-orange">Anna Molly</span></p>
+            </div>
+            <div class="col-12 col-md-4 col-sm-4">
+              <p class="text-right text-left"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="rating-number small-text">4.0</span></p>
+              <p class="text-right text-left small-text comment-very-good">Very Good</p>
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md-9 offset-md-2">
+                  <p class="small-text review-message">Being the savage's bowsman, that is, the person who pulled the bow-oar in his boat (the second one from forward), it was my cheerful duty to attend upon him while taking that hard-scrabble scramble upon the dead whale's back. You have seen Italian organ-boys holding a dancing-ape by a long cord. Just so, from the ship's steep side, did I hold Queequeg down there in the sea, by what is technically called in the fishery a monkey-rope, attached to a strong strip of canvas belted round his waist.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-10 offset-md-2">
+                  <img src="/assets/leafdrop.jpg" alt="Image" class="img-thumbnail img-fluid col-md-3" />
+                  <img src="/assets/leafdrop.jpg" alt="Image" class="img-thumbnail img-fluid col-md-3" />
+                  <img src="/assets/leafdrop.jpg" alt="Image" class="img-thumbnail img-fluid col-md-3" />
+                  <p><i class="fas fa-heart text-orange"></i><span> 12</span></p>
+              </div>
+
+            </div>  
+          </div>
+          <!-- review content section -->
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- right divisioin -->
+      </div>
+    </div>
+
+  </div>
+  <!-- shop details finish -->
+
+
+  
+
+<!-- carousel starts -->
+
+<div id="carouselExampleIndicators" class="carousel more-slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+
+  <div class="container">
+    <p class="more-like-this mb-5">More Like This </p>
+  </div>
+
+
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+          
+      <div class="container">
+        <div class="row">
+          <div class="card shadow-sm card-more-like "><!--card -->
+                   <div class="col-md-12">
+                     <div class="row">
+                            <div class="col-md-4 remove-padding-right padding-right">
+                              <img src="/assets/women.jpg" class="more-img img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                              <div class="card-block ">
+                                <p class="card-title">HairCuts Room</p>
+                                <p class="card-text"><span class="rating-number small-text">4.0</span> <span class="rating-count small-text">(678 Rating)</span></p>
+                                <hr class="card-hr" />
+                                <p class="card-text more-phone"><i class="fas fa-map-marker-alt text-muted "></i>  (510) 524-6480</p>
+                                <p class="card-text more-website"><i class="fas fa-map-marker-alt text-muted "></i>  <a href="#">Visit Website</a></p>
+                                <p class="card-text more-card-address"><i class="fas fa-map-marker-alt text-muted "></i>  800 San Pable Ave, Albany, CA</p>
+                              </div>
+                            </div>
+                   </div>
+                   </div>
+              </div><!--card -->
+
+              <div class="card shadow-sm card-more-like card-two"><!--card -->
+                   <div class="col-md-12">
+                     <div class="row">
+                            <div class="col-md-4 remove-padding-right padding-right">
+                              <img src="/assets/women.jpg" class="more-img img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                              <div class="card-block ">
+                                <p class="card-title">HairCuts Room</p>
+                                <p class="card-text"><span class="rating-number small-text">4.0</span> <span class="rating-count small-text">(678 Rating)</span></p>
+                                <hr class="card-hr" />
+                                <p class="card-text more-phone"><i class="fas fa-map-marker-alt text-muted "></i>  (510) 524-6480</p>
+                                <p class="card-text more-website"><i class="fas fa-map-marker-alt text-muted "></i>  <a href="#">Visit Website</a></p>
+                                <p class="card-text more-card-address"><i class="fas fa-map-marker-alt text-muted "></i>  800 San Pable Ave, Albany, CA</p>
+                              </div>
+                            </div>
+                   </div>
+                   </div>
+              </div><!--card --> 
+
+              <div class="card shadow-sm card-more-like card-three"><!--card -->
+                   <div class="col-md-12">
+                     <div class="row">
+                            <div class="col-md-4 remove-padding-right padding-right">
+                              <img src="/assets/women.jpg" class="more-img img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                              <div class="card-block ">
+                                <p class="card-title">HairCuts Room</p>
+                                <p class="card-text"><span class="rating-number small-text">4.0</span> <span class="rating-count small-text">(678 Rating)</span></p>
+                                <hr class="card-hr" />
+                                <p class="card-text more-phone"><i class="fas fa-map-marker-alt text-muted "></i>   (510) 524-6480</p>
+                                <p class="card-text more-website"><i class="fas fa-map-marker-alt text-muted "></i>   <a href="#">Visit Website</a></p>
+                                <p class="card-text more-card-address"><i class="fas fa-map-marker-alt text-muted "></i>   800 San Pable Ave, Albany, CA</p>  
+                              </div>
+                            </div>
+                   </div>
+                   </div>
+              </div><!--card --> 
+        </div>
+
+      </div>
+    </div>
+
+    <div class="carousel-item  ">
+      <div class="container"> 
+              
+        <div class="row">
+          <div class="card shadow-sm card-more-like"><!--card -->
+                   <div class="col-md-12">
+                     <div class="row">
+                            <div class="col-md-4 remove-padding-right padding-right">
+                              <img src="/assets/cycle.jpg" class="more-img img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                              <div class="card-block ">
+                                <p class="card-title">HairCuts Room</p>
+                                <p class="card-text"><span class="rating-number small-text">4.0</span> <span class="rating-count small-text">(678 Rating)</span></p>
+                                <hr class="card-hr" />
+                                <p class="card-text more-phone"><i class="fas fa-map-marker-alt text-muted "></i>  (510) 524-6480</p>
+                                <p class="card-text more-website"><i class="fas fa-map-marker-alt text-muted "></i>  <a href="#">Visit Website</a></p>
+                                <p class="card-text more-card-address"><i class="fas fa-map-marker-alt text-muted "></i>  800 San Pable Ave, Albany, CA</p>
+                              </div>
+                            </div>
+                   </div>
+                   </div>
+              </div><!--card -->
+
+              <div class="card shadow-sm card-more-like card-two"><!--card -->
+                   <div class="col-md-12">
+                     <div class="row">
+                            <div class="col-md-4 remove-padding-right padding-right">
+                              <img src="/assets/cycle.jpg" class="more-img img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                              <div class="card-block ">
+                                <p class="card-title">HairCuts Room</p>
+                                <p class="card-text"><span class="rating-number small-text">4.0</span> <span class="rating-count small-text">(678 Rating)</span></p>
+                                <hr class="card-hr" />
+                                <p class="card-text more-phone"><i class="fas fa-map-marker-alt text-muted "></i>  (510) 524-6480</p>
+                                <p class="card-text more-website"><i class="fas fa-map-marker-alt text-muted "></i>  <a href="#">Visit Website</a></p>
+                                <p class="card-text more-card-address"><i class="fas fa-map-marker-alt text-muted "></i>  800 San Pable Ave, Albany, CA</p>
+                              </div>
+                            </div>
+                   </div>
+                   </div>
+              </div><!--card --> 
+
+              <div class="card shadow-sm card-more-like card-three"><!--card -->
+                   <div class="col-md-12">
+                     <div class="row">
+                            <div class="col-md-4 remove-padding-right padding-right">
+                              <img src="/assets/cycle.jpg" class="more-img img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                              <div class="card-block ">
+                                <p class="card-title">HairCuts Room</p>
+                                <p class="card-text"><span class="rating-number small-text">4.0</span> <span class="rating-count small-text">(678 Rating)</span></p>
+                                <hr class="card-hr" />
+                                <p class="card-text more-phone"><i class="fas fa-map-marker-alt text-muted "></i>   (510) 524-6480</p>
+                                <p class="card-text more-website"><i class="fas fa-map-marker-alt text-muted "></i>   <a href="#">Visit Website</a></p>
+                                <p class="card-text more-card-address"><i class="fas fa-map-marker-alt text-muted "></i>   800 San Pable Ave, Albany, CA</p>  
+                              </div>
+                            </div>
+                   </div>
+                   </div>
+              </div><!--card --> 
+        </div>
+
+      </div>
+    </div>
+
+    <div class="carousel-item ">
+      <div class="container"> 
+              
+        <div class="row">
+          <div class="card shadow-sm card-more-like "><!--card -->
+                   <div class="col-md-12">
+                     <div class="row">
+                            <div class="col-md-4 remove-padding-right padding-right">
+                              <img src="/assets/handshake.jpg" class="more-img img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                              <div class="card-block ">
+                                <p class="card-title">HairCuts Room</p>
+                                <p class="card-text"><span class="rating-number small-text">4.0</span> <span class="rating-count small-text">(678 Rating)</span></p>
+                                <hr class="card-hr" />
+                                <p class="card-text more-phone"><i class="fas fa-map-marker-alt text-muted "></i>  (510) 524-6480</p>
+                                <p class="card-text more-website"><i class="fas fa-map-marker-alt text-muted "></i>  <a href="#">Visit Website</a></p>
+                                <p class="card-text more-card-address"><i class="fas fa-map-marker-alt text-muted "></i>  800 San Pable Ave, Albany, CA</p>
+                              </div>
+                            </div>
+                   </div>
+                   </div>
+              </div><!--card -->
+
+              <div class="card shadow-sm card-more-like card-two"><!--card -->
+                   <div class="col-md-12">
+                     <div class="row">
+                            <div class="col-md-4 remove-padding-right padding-right">
+                              <img src="/assets/handshake.jpg" class="more-img img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                              <div class="card-block ">
+                                <p class="card-title">HairCuts Room</p>
+                                <p class="card-text"><span class="rating-number small-text">4.0</span> <span class="rating-count small-text">(678 Rating)</span></p>
+                                <hr class="card-hr" />
+                                <p class="card-text more-phone"><i class="fas fa-map-marker-alt text-muted "></i>  (510) 524-6480</p>
+                                <p class="card-text more-website"><i class="fas fa-map-marker-alt text-muted "></i>  <a href="#">Visit Website</a></p>
+                                <p class="card-text more-card-address"><i class="fas fa-map-marker-alt text-muted "></i>  800 San Pable Ave, Albany, CA</p>
+                              </div>
+                            </div>
+                   </div>
+                   </div>
+              </div><!--card --> 
+
+              <div class="card shadow-sm card-more-like card-three"><!--card -->
+                   <div class="col-md-12">
+                     <div class="row">
+                            <div class="col-md-4 remove-padding-right padding-right">
+                              <img src="/assets/handshake.jpg" class="more-img img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                              <div class="card-block ">
+                                <p class="card-title">HairCuts Room</p>
+                                <p class="card-text"><span class="rating-number small-text">4.0</span> <span class="rating-count small-text">(678 Rating)</span></p>
+                                <hr class="card-hr" />
+                                <p class="card-text more-phone"><i class="fas fa-map-marker-alt text-muted "></i>   (510) 524-6480</p>
+                                <p class="card-text more-website"><i class="fas fa-map-marker-alt text-muted "></i>   <a href="#">Visit Website</a></p>
+                                <p class="card-text more-card-address"><i class="fas fa-map-marker-alt text-muted "></i>   800 San Pable Ave, Albany, CA</p>  
+                              </div>
+                            </div>
+                   </div>
+                   </div>
+              </div><!--card --> 
+        </div>
+
+      </div>
+    </div>
+
+  
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!-- carousel ends  -->
+
+
+
+
+
+
+     <!-- contact start --> 
+ <div class="contact-page">
+     <div class="container">
+     <div class="row">
+       <div class="col-md-4 col-sm-6 col-xs-12 ">
+         <img src="/assets/logo-white.png" class="center">
+         <div class="address text d-none d-sm-block">
+           <p class="company-name">Global Headquarters</p>
+         <p>#31, 9th Main Rd, 6th Sector,<br>HSR Layout, Bengaluru, <br>Karnataka 560102</p>
+         </div>
+         
+       </div>
+       <div class="col-md-2 ml-md-auto col-sm-6 col-xs-12 text d-none d-sm-block">
+         <p class="company-mapping">Company</p>
+         <ul class="details">
+           <li><a href="#">About us</a></li>
+           <li><a href="#">Team</a></li>
+           <li><a href="#">Careers</a></li>
+           <li><a href="#">Blog</a></li>
+         </ul>
+       </div>
+       <div class="col-md-2 col-sm-6 col-xs-12 text d-none d-sm-block">
+         <p class="company-mapping">Contact</p>
+         <ul class="details">
+           <li><a href="#">Help & Support</a></li>
+           <li><a href="#">Partner with us</a></li>
+           <li><a href="#">List with us</a></li>
+         </ul>
+       </div>
+       <div class="col-md-2 col-sm-6 col-xs-12 text d-none d-sm-block">
+         <p class="company-mapping">Legal</p>
+         <ul class="details">
+           <li><a href="#">Terms & Conditions</a></li>
+           <li><a href="#">Privacy Policy</a></li>
+           <li><a href="#">Cookie Policy</a></li>
+           <li><a href="#">Offer Terms</a></li>
+         </ul>
+       </div>
+     </div>
+   </div>
+ </div>
+    
+<!--footer -->
+  <footer class="footer mt-auto py-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+      <div class="social-media">
+            <ul class="my-2">
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-facebook-square mx-2"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram mx-2"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin mx-2"></i></a></li>
+            </ul>
+          </div>
+    </div>
+      <div class="col-md-8 copyright">
+          <p class="text-center">&#64; 2018 ConvertCart</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- footer -->

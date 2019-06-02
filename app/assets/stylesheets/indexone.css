@@ -54,6 +54,11 @@
 body{
   
 }
+.explore-header{
+  min-height: 100vh !important; 
+  max-height: 100% !important; 
+  position: relative !important;
+}
 .bg-light{
   background: transparent !important;
   background-color: transparent !important;
