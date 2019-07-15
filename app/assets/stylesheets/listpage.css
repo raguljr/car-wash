@@ -312,8 +312,6 @@ input[type="text"]{
   clear: both;
 }
 .listpage-card-image{
-      width: 278px !important;
-    height: 180px !important;
   background-size: 380px 200px !important;
 }
 
@@ -832,9 +830,6 @@ footer{
   margin-left: -44px !important;
 }
 
-.listpage-card-image{
-  height: 100% !important;
-}
 .open-orange{
   padding: 0px !important;
   margin-left: 26px !important;

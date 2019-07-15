@@ -1,6 +1,6 @@
 *{
-	margin:0px 0px; 
-	padding: 0px 0px;
+  margin:0px 0px; 
+  padding: 0px 0px;
 }
 @font-face {
   font-family: CircularStd-Black;
@@ -154,7 +154,7 @@ p{
   font-size: 12px !important;
 }
 .bg-color{
-	background-color: var(--white);
+  background-color: var(--white);
 }
 
 .image-setting{
@@ -221,8 +221,10 @@ p.verified{
 }
 .shop-title{
   font-family: CircularStd-Bold !important;
-  font-size: 26px !important;
+  font-size: 22px !important;
   padding-left: 0px !important;
+  color: var(--address-listpage-card-color) !important;
+  text-decoration: none !important;
 }
 .shop-details{
   margin-top: 0px;
@@ -705,9 +707,9 @@ footer{
     font-size: 10px !important;
     padding-left: 0px !important;
 }
-p.shop-title{
+.shop-title{
   font-family: CircularStd-Bold !important;
-  font-size: 26px !important;
+  font-size: 20px !important;
 }
 .review{
   padding-left: 14px !important;
