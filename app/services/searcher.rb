@@ -34,4 +34,10 @@ class Searcher
     [@results, @count]
   end
 
+  def self.city(city, page)
+    @count = Washer.joins(:feature,:address).where('lower(city) = ?', city.gsub('-',' ').downcase).count
+    @results = Washer.joins(:feature,:address).where('lower(city) = ?', city.gsub('-',' ').downcase).page(page).per(10)
+    [@results, @count]
+  end
+
 end
