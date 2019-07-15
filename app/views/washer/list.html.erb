@@ -269,21 +269,29 @@
                                       <p><span class="rating-number">4.0</span> <span class="rating-count">(678 Rating)</span></p>
                                     </div>
                                     <div class="col-6 col-md-6 col-sm-6">
-                                      <p class=" text-right small-text rating-count">From <span class="price-display">$3.00</span></p>
+                                      <!-- <p class=" text-right small-text rating-count">From <span class="price-display">$3.00</span></p> -->
                                     </div>
                                 </div>
                                 <hr/>
                                 <div class="row">
                                 <div class="col-1 col-sm-1 col-md-1 "><i class="fas fa-phone-volume listpage-address-icons mr-3"></i> </div>
-                                <div class="col-10 col-sm-10 col-md-10 "><p class="listpage-shop-number mb-2"><%= result.phone_number %></p></div>
+                                <div class="col-10 col-sm-10 col-md-10 "><p class="listpage-shop-number mb-2"><%= result.phone_number.present? ? result.phone_number : '-' %></p></div>
                                 </div>
                                 <div class="row">
                                 <div class="col-1 col-sm-1 col-md-1"><i class="fas fa-link listpage-address-icons mr-3"></i> </div>
-                                <div class="col-10 col-sm-10 col-md-10"><p class="mb-2"><a target="_blank" href="<%= result.website %>" class="listpage-visit-website"><%= result.website %></a></p></div>
+                                <div class="col-10 col-sm-10 col-md-10">
+                                  <p class="mb-2">
+                                    <% if result.website.present? %>
+                                    <a target="_blank" href="<%= result.website %>" class="listpage-visit-website"><%= result.website %></a>
+                                    <% else %>
+                                    -
+                                    <% end %>
+                                  </p>
+                                </div>
                                 </div>
                                 <div class="row">
                                 <div class="col-1 col-sm-1 col-md-1"><i class="fas fa-map-marker-alt listpage-address-icons mr-3"></i></div>
-                                <div class="col-10 col-sm-10 col-md-10"><p class="shop-address mb-2" > <%= result.short_address %> </p></div>
+                                <div class="col-10 col-sm-10 col-md-10"><p class="shop-address mb-2" > <%= result.short_address.present?? result.short_address : '-' %> </p></div>
                                 </div>
 
 
