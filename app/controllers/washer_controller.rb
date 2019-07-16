@@ -4,6 +4,9 @@ class WasherController < ApplicationController
 
   def list
     @results, @count = Searcher.washer(params[:what], params[:city], params[:page])
+    if @count == 1
+      redirect_to action: 'info', id:@results.first.try(:id), name:@results.first.try(:name).to_s.gsub(' ','-')
+    end
   end
 
   def info
@@ -27,7 +30,8 @@ class WasherController < ApplicationController
   def what_autocomplete
     query = params[:term].downcase
     @results = ["automatic","handwash","touchless","spray","interior","oil change","shampoo","free vacuum"].select{|val| val.include?(query)}
-    @results += Washer.where("name like ?", "%#{query}%").limit(10).pluck(:name)
+    # @results += Washer.where("name like ?", "%#{query}%").limit(10).pluck(:name)
+    @results += Washer.what_autocomplete(query)
     render json: @results
   end
 end
