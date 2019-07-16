@@ -2,10 +2,20 @@ class Searcher
 
   def self.washer(what_query, place_query, page)
     if what_query.include?(',')
-      what_query = what_query.split(",")[0]
       place_query = what_query.split(",")[1..].join(',')
+      what_query = what_query.split(",")[0]
     end
-    if place_query.present? || what_query.present?
+    if place_query.present? && what_query.present?
+      place = {}
+      if place_query.include?(',')
+        place['city'] = place_query.split(',')[0]
+        place['state'] = place_query.split(',')[1]
+      else
+        place['state'] = place_query
+      end
+      @results = Washer.includes(:address).where(name: what_query).where(addresses: place).page(page).per(10)
+      @count = Washer.includes(:address).where(name: what_query).where(addresses: place).count
+    elsif place_query.present? || what_query.present?
       where_query = {}
       if place_query.present?
         obj = {}
