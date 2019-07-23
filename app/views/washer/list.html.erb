@@ -87,8 +87,13 @@
   <div class="container">
       <nav aria-label="breadcrumb ">
           <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <% if request.original_url.include?('/city/') %>
+          <li class='breadcrumb-item'><a href='<%= state_url(@address.state) %>'><%= @address.try(:state)%></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><%= @address.try(:city) %></li>
+          <% else %>
           <li class="breadcrumb-item active" aria-current="page">Search Listing</li>
+          <% end %>
         </ol>
       </nav>
   </div>
@@ -123,7 +128,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text small-text listpage-search-where" id="inputGroupPrepend">Where</span>
                               </div>
-                              <input type="text" class="form-control listpage-searchbox-where" name="city" id="city" placeholder="City, postcode...." aria-describedby="inputGroupPrepend" >
+                              <input type="text" class="form-control listpage-searchbox-where" name="where" id="city" placeholder="City, postcode...." aria-describedby="inputGroupPrepend" >
                             </div>
                       </div>
                     </div>

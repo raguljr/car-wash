@@ -13,7 +13,15 @@ $(document).ready(function() {
   });
 
   $('.select-category').change(function(){
-    if(window.location.href.match(/(what=)[^\&]+/) == undefined) {
+    if(window.location.href.includes('/city/')){
+      if (window.location.href.includes('what=')){
+        var url = window.location.href.replace(/(what=)[^\&]+/, '$1' + $(this).val());
+      }
+      else{
+        var url = window.location.href+"?what="+ $(this).val()
+      }
+    }
+    else if(window.location.href.match(/(what=)[^\&]+/) == undefined) {
       var url = window.location.href.replace("what=","what="+ $(this).val())
     }
     else{
@@ -22,7 +30,7 @@ $(document).ready(function() {
     console.log(url);
     window.location.href = url;
   });
-
+ 
 });
 
 document.addEventListener("turbolinks:load", function() {

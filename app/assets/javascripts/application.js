@@ -17,4 +17,5 @@
 //= require bootstrap.min
 //= require activestorage
 //= require turbolinks
+// require jquery.star-rating-svg.min
 //= require_tree .

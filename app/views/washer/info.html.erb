@@ -23,9 +23,9 @@
         <div class="col-9 col-md-9">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Search Listing</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Day Spas</li>
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <%= breadcrumb_for_city(@info.address.state, @info.address.city) %>
+                <li class="breadcrumb-item active" aria-current="page"><%= @info.name %></li>
               </ol>
             </nav>
         </div>
@@ -40,13 +40,10 @@
           <p class="col-8 col-sm-6 col-md-9 shop-title"><%= @info.name %></p>
         </div>
         <p class="my-2">
-          <span class="rating-number small-text mr-1 mr-sm-0">4.0</span>
-          <i class="fas fa-star mr-1 mr-sm-0"></i>
-          <i class="fas fa-star mr-1 mr-sm-0"></i>
-          <i class="fas fa-star mr-1 mr-sm-0"></i>
-          <i class="fas fa-star mr-1 mr-sm-0"></i>
-          <i class="fas fa-star mr-1 mr-sm-0"></i>
-          <span class="rating-count small-text mr-2">(678 Rating)</span> 
+          <span class="rating-number small-text mr-1 mr-sm-0"><%= @comments[:ratings]%></span>
+          <!-- <span class="total-rating"></span> -->
+          <%= form_stars(@comments[:ratings]) %>
+          <span class="rating-count small-text mr-2">(<%= @comments[:total_ratings] %> Rating)</span> 
           <i class="far fa-clock mr-2 mt-2">&nbsp;
           <span class="rating-count small-text mr-2 mt-1"> Posted 20 hours ago</span></i>
           <button type="button" class="btn btn-light btn-sm btn-block button-light  d-sm-block d-md-none d-lg-none mt-2"> <u>Suggest an edit</u></button>
@@ -409,11 +406,13 @@
               <hr class="rating-hr" />
               <div class="form-row ">
                   <div class="form-group col-md-9 remove-mb">
-                    <p class="select-rating">Select your Rating <i class="fas fa-star rating-star"></i> <i class="fas fa-star rating-star"></i> <i class="fas fa-star rating-star"></i> <i class="fas fa-star rating-star"></i><i class="fas fa-star rating-star"></i></p>
+                  <p class="select-rating">Select your Rating 
+                  <span class="my-rating"></span>  
+                  </p>
                   </div>
                   <div class="form-group col-md-3  remove-mb">
                     <div class="custom-file ">
-                    <input type="file" class="custom-file-input" id="customFile" >
+                    <input type="file" name="images[]" class="custom-file-input images" id="customFile" multiple>
                     <label class="custom-file-label" for="customFile"><i class="fas fa-cloud-upload-alt"></i> Add a Photo</label>
                     </div>
                   </div>
@@ -421,96 +420,33 @@
 
                 <div class="form-row  ">
                   <div class="form-group col-md-4">
-                    <input type="text" class="form-control" placeholder="Name">
+                    <input name="authenticity_token" class="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+                    <input type="hidden" name="washer_id" class="washer_id" value=<%= params[:id] %>>
+                    <input type="text" class="form-control reviewer_name" placeholder="Name" name="reviewer_name">
                   </div>
                   <div class="form-group col-md-4">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" class="form-control reviewer_email" placeholder="Email" name="reviewer_email">
                   </div>
                   <div class="form-group col-md-4">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="email" class="form-control review_title" placeholder="Title" name="review_title">
                   </div>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" rows="5" placeholder="Write a Review here..."></textarea>
+                  <textarea class="form-control reviewer_comment" rows="5" placeholder="Write a Review here..." name="reviwer_comment"></textarea>
                 </div>
-                <button type="submit" class="btn btn-success mb-4">Sign up and Submit</button>
+                <button type="button" class="btn btn-success mb-4 submit_comments">Submit</button>
               </form>
               <!-- form -->
           </div>
 
           <!-- review content section -->
-          <div class="col-md-12 py-5">
-            <div class="row">
-              <div class="col-3 col-md-2 col-sm-2">
-                <img src="/assets/anime.jpg" alt="profile images" class=" rounded-circle human-circle" class="img-fluid">
-            </div>
-            <div class="col-9 col-md-6 col-sm-6"> 
-                <p class="comment-title">Rejunvated like nothing else</p>
-                <p class="small-text author-comment">by <span class="text-orange">Anna Molly</span></p>
-            </div>
-            <div class="col-12 col-md-4 col-sm-4 ">
-              <p class="text-right text-left"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="rating-number small-text">4.0</span></p>
-              <p class="text-right text-left small-text comment-very-good">Very Good</p>
-            </div>
-            </div>
-            <div class="row">
-              <div class="col-md-9 offset-md-2">
-                  <p class="small-text review-message">Being the savage's bowsman, that is, the person who pulled the bow-oar in his boat (the second one from forward), it was my cheerful duty to attend upon him while taking that hard-scrabble scramble upon the dead whale's back. You have seen Italian organ-boys holding a dancing-ape by a long cord. Just so, from the ship's steep side, did I hold Queequeg down there in the sea, by what is technically called in the fishery a monkey-rope, attached to a strong strip of canvas belted round his waist.</p>
-              </div>
-            </div>
-              <div class="row">
-                <div class="col-md-10 offset-md-2">
-                    <img src=" " alt="" class=" img-fluid col-md-3" />
-                    <img src=" " alt="" class=" img-fluid col-md-3" />
-                    <img src=" " alt="" class=" img-fluid col-md-3" />
-                    <p><i class="fas fa-heart text-orange"></i><span> 12</span></p>
-                </div>
-              </div>  
+          <div class="comments_section">
+            
           </div>
           <!-- review content section -->
-          <!-- review content section -->
-          <div class="col-md-12 py-5">
-            <div class="row">
-              <div class="col-3 col-md-2 col-sm-2">
-              <img src="/assets/anime1.jpg" alt="profile images" class=" rounded-circle human-circle" class="img-fluid">
-            </div>
-            <div class="col-9 col-md-6 col-sm-6"> 
-                <p class="comment-title">Rejunvated like nothing else</p>
-                <p class="small-text author-comment">by <span class="text-orange">Anna Molly</span></p>
-            </div>
-            <div class="col-12 col-md-4 col-sm-4">
-              <p class="text-right text-left"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="rating-number small-text">4.0</span></p>
-              <p class="text-right text-left small-text comment-very-good">Very Good</p>
-            </div>
-            </div>
-            <div class="row">
-              <div class="col-md-9 offset-md-2">
-                  <p class="small-text review-message">Being the savage's bowsman, that is, the person who pulled the bow-oar in his boat (the second one from forward), it was my cheerful duty to attend upon him while taking that hard-scrabble scramble upon the dead whale's back. You have seen Italian organ-boys holding a dancing-ape by a long cord. Just so, from the ship's steep side, did I hold Queequeg down there in the sea, by what is technically called in the fishery a monkey-rope, attached to a strong strip of canvas belted round his waist.</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-10 offset-md-2">
-                  <img src="/assets/leafdrop.jpg" alt="Image" class="img-thumbnail img-fluid col-md-3" />
-                  <img src="/assets/leafdrop.jpg" alt="Image" class="img-thumbnail img-fluid col-md-3" />
-                  <img src="/assets/leafdrop.jpg" alt="Image" class="img-thumbnail img-fluid col-md-3" />
-                  <p><i class="fas fa-heart text-orange"></i><span> 12</span></p>
-              </div>
 
-            </div>  
-          </div>
-          <!-- review content section -->
           <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
+            <button type="button" class="btn btn-success mb-4 load_more_comments">Load more</button>
           </nav>
         </div>
         <!-- right divisioin -->

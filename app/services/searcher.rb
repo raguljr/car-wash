@@ -1,7 +1,7 @@
 class Searcher
 
   def self.washer(what_query, place_query, page)
-    if what_query.include?(',')
+    if what_query.to_s.include?(',')
       place_query = what_query.split(",")[1..].join(',')
       what_query = what_query.split(",")[0]
     end
@@ -18,15 +18,12 @@ class Searcher
     elsif place_query.present? || what_query.present?
       where_query = {}
       if place_query.present?
-        obj = {}
         city,state_code=place_query.split(",")
         if state_code.present?
-          obj["city"] = city
-          washer_ids = Address.where(obj).pluck(:washer_id)
+          washer_ids = Address.where('lower(city) = ?', city.gsub('-',' ').downcase).pluck(:washer_id)
           where_query["id"] = washer_ids
         else
-          obj["state"] = city
-          washer_ids = Address.where(obj).pluck(:washer_id)
+          washer_ids = Address.where('lower(state) = ?', city.gsub('-',' ').downcase).pluck(:washer_id)
           where_query["id"] = washer_ids
         end
       else
@@ -48,10 +45,19 @@ class Searcher
     [@results, @count]
   end
 
-  def self.city(city, page)
-    @count = Washer.joins(:feature,:address).where('lower(city) = ?', city.gsub('-',' ').downcase).count
-    @results = Washer.joins(:feature,:address).where('lower(city) = ?', city.gsub('-',' ').downcase).page(page).per(10)
-    [@results, @count]
+  def self.city(state, city, what, page)
+    if what.present?
+      what_feature = {}
+      what_feature[what.to_s.gsub(" ","_")] = 1 
+      @count = Washer.joins(:feature,:address).where('lower(city) = ? and lower(state) = ?', city.gsub('-',' ').downcase, state.gsub('-',' ').downcase).where(features: what_feature).count
+      @results = Washer.joins(:feature,:address).where('lower(city) = ? and lower(state) = ?', city.gsub('-',' ').downcase, state.gsub('-',' ').downcase).where(features: what_feature).page(page).per(10)
+      @address = Address.where('lower(city) = ? and lower(state) = ?', city.gsub('-',' ').downcase, state.gsub('-',' ').downcase).try(:first)
+    else
+      @count = Washer.joins(:feature,:address).where('lower(city) = ? and lower(state) = ?', city.gsub('-',' ').downcase, state.gsub('-',' ').downcase).count
+      @results = Washer.joins(:feature,:address).where('lower(city) = ? and lower(state) = ?', city.gsub('-',' ').downcase, state.gsub('-',' ').downcase).page(page).per(10)
+      @address = Address.where('lower(city) = ? and lower(state) = ?', city.gsub('-',' ').downcase, state.gsub('-',' ').downcase).try(:first)
+    end
+    [@results, @address, @count]
   end
 
 end
