@@ -42,8 +42,8 @@ class WasherController < ApplicationController
   def what_autocomplete
     query = params[:term].downcase
     @results = ["automatic","handwash","touchless","spray","interior","oil change","shampoo","free vacuum"].select{|val| val.include?(query)}
-    @results += Washer.where("name like ?", "%#{query}%").limit(10).pluck(:name)
-    # @results += Washer.what_autocomplete(query)
+    # @results += Washer.where("name like ?", "%#{query}%").limit(10).pluck(:name)
+    @results += Washer.what_autocomplete(query)
     render json: @results
   end
 end
