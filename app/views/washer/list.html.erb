@@ -260,7 +260,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                       <p>
-                                        <a href="/info/<%= result.name.squish.downcase.gsub(" ","-") %>/<%= result.id %>"  class="shop-title">
+                                        <a href="<%= business_url(result) %>"  class="shop-title">
                                           <%= result.name %>
                                         </a>    
                                       </p>
@@ -271,7 +271,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-6 col-md-6 col-sm-6">
-                                      <p><span class="rating-number">4.0</span> <span class="rating-count">(678 Rating)</span></p>
+                                      <% rating, total_rating = rating_helper(result.comments) %>
+                                      <p><span class="rating-number"><%= rating %></span> <span class="rating-count">(<%= total_rating %> Rating)</span></p>
                                     </div>
                                     <div class="col-6 col-md-6 col-sm-6">
                                       <!-- <p class=" text-right small-text rating-count">From <span class="price-display">$3.00</span></p> -->

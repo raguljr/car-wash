@@ -13,14 +13,17 @@ class Searcher
       else
         place['state'] = place_query
       end
-      @results = Washer.includes(:address).where(name: what_query).where(addresses: place).page(page).per(10)
+      @results = Washer.includes(:address, :comments).where(name: what_query).where(addresses: place).page(page).per(10)
       @count = Washer.includes(:address).where(name: what_query).where(addresses: place).count
     elsif place_query.present? || what_query.present?
       where_query = {}
       if place_query.present?
-        city,state_code=place_query.split(",")
-        if state_code.present?
-          washer_ids = Address.where('lower(city) = ?', city.gsub('-',' ').downcase).pluck(:washer_id)
+        city,state=place_query.split(",")
+        if state.present? and city.present?
+          washer_ids = Address.where('lower(city) = ? and lower(state) = ?', city.gsub('-',' ').downcase, state.gsub('-',' ').downcase).pluck(:washer_id)
+          where_query["id"] = washer_ids
+        elsif state.present?
+          washer_ids = Address.where('lower(state) = ?', state.gsub('-',' ').downcase).pluck(:washer_id)
           where_query["id"] = washer_ids
         else
           washer_ids = Address.where('lower(state) = ?', city.gsub('-',' ').downcase).pluck(:washer_id)
@@ -33,10 +36,10 @@ class Searcher
         what_feature = {}
         what_feature[what_query.gsub(" ","_")] = 1
         @count = Washer.joins(:feature,:address).where(features: what_feature).where(where_query).count
-        @results = Washer.joins(:feature,:address).where(features: what_feature).where(where_query).page(page).per(10)
+        @results = Washer.includes(:address, :comments).joins(:feature,:address).where(features: what_feature).where(where_query).page(page).per(10)
       else
         @count = Washer.where("name like ?","#{what_query}%").where(where_query).count
-        @results = Washer.where("name like ?","#{what_query}%").where(where_query).page(page).per(10)
+        @results = Washer.includes(:address, :comments).where("name like ?","#{what_query}%").where(where_query).page(page).per(10)
       end
     else
       @count = 0
@@ -52,10 +55,14 @@ class Searcher
       @count = Washer.joins(:feature,:address).where('lower(city) = ? and lower(state) = ?', city.gsub('-',' ').downcase, state.gsub('-',' ').downcase).where(features: what_feature).count
       @results = Washer.joins(:feature,:address).where('lower(city) = ? and lower(state) = ?', city.gsub('-',' ').downcase, state.gsub('-',' ').downcase).where(features: what_feature).page(page).per(10)
       @address = Address.where('lower(city) = ? and lower(state) = ?', city.gsub('-',' ').downcase, state.gsub('-',' ').downcase).try(:first)
-    else
+    elsif state.present? and city.present?
       @count = Washer.joins(:feature,:address).where('lower(city) = ? and lower(state) = ?', city.gsub('-',' ').downcase, state.gsub('-',' ').downcase).count
       @results = Washer.joins(:feature,:address).where('lower(city) = ? and lower(state) = ?', city.gsub('-',' ').downcase, state.gsub('-',' ').downcase).page(page).per(10)
       @address = Address.where('lower(city) = ? and lower(state) = ?', city.gsub('-',' ').downcase, state.gsub('-',' ').downcase).try(:first)
+    else
+      @count = Washer.joins(:feature,:address).where('lower(state) = ?', state.gsub('-',' ').downcase).count
+      @results = Washer.joins(:feature,:address).where('lower(state) = ?', state.gsub('-',' ').downcase).page(page).per(10)
+      @address = Address.where('lower(state) = ?', state.gsub('-',' ').downcase).try(:first)
     end
     [@results, @address, @count]
   end

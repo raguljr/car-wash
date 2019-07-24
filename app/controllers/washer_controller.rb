@@ -5,7 +5,7 @@ class WasherController < ApplicationController
   def list
     @results, @count = Searcher.washer(params[:what], params[:where], params[:page])
     if @count == 1
-      redirect_to action: 'info', id:@results.first.try(:id), name:@results.first.try(:name).to_s.gsub(' ','-')
+      redirect_to action: 'info', id:@results.first.try(:id), name:@results.first.try(:name).to_s.gsub(' ','-'), state: @results.first.address.try(:state).to_s.gsub(' ','-'), city: @results.first.address.try(:city).to_s.gsub(' ','-')
     end
   end
 

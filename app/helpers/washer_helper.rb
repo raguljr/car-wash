@@ -12,6 +12,14 @@ module WasherHelper
     "/list?where=#{state.downcase.gsub(' ','-')}"
   end
 
+  def business_url(result)
+    id = result.id
+    name = result.name.squish.downcase.gsub(" ","-")
+    state = result.address.state.squish.downcase.gsub(" ","-")
+    city = result.address.city.squish.downcase.gsub(" ","-")
+    "/#{state}/#{city}/#{name}/#{id}"
+  end
+
   def form_stars(rating)
     rating_data = ""
     rating.times  do
@@ -21,6 +29,14 @@ module WasherHelper
       rating_data += '<i class="far fa-star"></i>'
     end
     rating_data.html_safe
+  end
+
+  def rating_helper(comments)
+    if comments.count > 0
+      [(comments.try(:sum,:rating) / comments.count).to_i, comments.count]
+    else
+      [0,0]
+    end
   end
 
 end

@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
-	load_comments($('.washer_id').val(), offset)
+	if(window.location.pathname.split("/").length-1 == 4){
+		load_comments($('.washer_id').val(), offset)
+	}
 
 	$('.load_more_comments').click(function(){
 		offset += 2;
