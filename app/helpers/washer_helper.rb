@@ -1,15 +1,15 @@
 module WasherHelper
   def breadcrumb_for_city(state, city)
-    crumbs = "<li class='breadcrumb-item'><a href='"+state_url(state)+"'>#{state}</a></li><li class='breadcrumb-item'><a href='"+city_url(city)+"'>#{city}</a></li>"
+    crumbs = "<li class='breadcrumb-item'><a href='"+state_url(state)+"'>#{state}</a></li><li class='breadcrumb-item'><a href='"+city_url(state, city)+"'>#{city}</a></li>"
     crumbs.html_safe
   end
 
-  def city_url(city)
-    "/city/#{city.downcase.gsub(' ','-')}"
+  def city_url(state, city)
+    "#{state_url(state)}/#{city.downcase.gsub(' ','-')}"
   end
 
   def state_url(state)
-    "/list?where=#{state.downcase.gsub(' ','-')}"
+    "/#{state.downcase.gsub(' ','-')}"
   end
 
   def business_url(result)
