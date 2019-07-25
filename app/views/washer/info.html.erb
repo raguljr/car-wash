@@ -29,14 +29,18 @@
               </ol>
             </nav>
         </div>
+        <% if @info.featured %>
         <div class="col-3 col-md-3 featured-mobile  d-sm-block d-md-none d-lg-none">
           <button type="button" class="btn btn-success btn-sm btn-block">Featured</button>
         </div>
+        <% end %>
     </div>
     <div class="row">
       <div class="col-md-6">
         <div >
+          <% if @info.verified %>
           <p class="col-4 col-sm-6 col-md-3 offset-7 offset-sm-5 offset-md-7 verified"><i class="fas fa-check-circle"></i> Verified</p>
+          <% end %>
           <p class="col-8 col-sm-6 col-md-9 shop-title"><%= @info.name %></p>
         </div>
         <p class="my-2">
@@ -58,7 +62,9 @@
     
     <div class="row  d-none d-sm-none d-md-block ">
       <div class="col-6 col-sm-6 col-md-4 featured-button-col featured-buttons">
+        <% if @info.featured %>
         <button type="button" class="btn btn-success btn-sm btn-block featured">Featured</button>
+        <% end %>
         <button type="button" class="btn btn-light btn-sm btn-block button-light"> <u>Suggest an edit</u></button>
       </div>
       
@@ -412,7 +418,7 @@
                   </div>
                   <div class="form-group col-md-3  remove-mb">
                     <div class="custom-file ">
-                    <input type="file" name="images[]" class="custom-file-input images" id="customFile" multiple>
+                    <input type="file" name="images[]" class="custom-file-input images" id="customFile" accept="image/*" multiple>
                     <label class="custom-file-label" for="customFile"><i class="fas fa-cloud-upload-alt"></i> Add a Photo</label>
                     </div>
                   </div>

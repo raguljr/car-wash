@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_23_165325) do
+ActiveRecord::Schema.define(version: 2019_07_25_153819) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_165325) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
+    t.boolean "approved", default: false
     t.index ["ip_address", "washer_id"], name: "index_comments_on_ip_address_and_washer_id", unique: true
     t.index ["washer_id"], name: "index_comments_on_washer_id"
   end
@@ -83,6 +84,8 @@ ActiveRecord::Schema.define(version: 2019_07_23_165325) do
     t.string "short_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "verified", default: false
+    t.boolean "featured", default: false
   end
 
   create_table "working_days", force: :cascade do |t|

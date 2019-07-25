@@ -11,7 +11,7 @@ class WasherController < ApplicationController
 
   def info
     @info = Washer.includes(:address,:feature,:working_day).find(params[:id])
-    ratings = Comment.where(washer_id: params[:id]).pluck(:rating)
+    ratings = Comment.approved.where(washer_id: params[:id]).pluck(:rating)
     if ratings.length > 0
       @comments = {
         "ratings": (ratings.sum / ratings.count).to_i,
